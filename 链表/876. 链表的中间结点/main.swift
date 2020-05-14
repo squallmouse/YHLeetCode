@@ -47,6 +47,49 @@ public class ListNode {
 
 class Solution {
     func middleNode(_ head: ListNode?) -> ListNode? {
+        var currNode = head
+        var count:Int = 0
+        while currNode != nil {
+            currNode = currNode?.next
+            count += 1
+        }
+        count = count/2
+        currNode = head
+        for _ in 0..<count {
+            currNode = currNode?.next
+        }
+        return currNode
         
     }
 }
+
+
+
+let node1 = ListNode.init(1)
+let node2 = ListNode.init(2)
+let node3 = ListNode.init(3)
+let node4 = ListNode.init(4)
+let node5 = ListNode.init(5)
+let node6 = ListNode.init(6)
+let node7 = ListNode.init(7)
+
+var head = node1
+node1.next = node2
+node2.next = node3
+node3.next = node4
+node4.next = node5
+node5.next = node6
+//node6.next = node7
+
+
+var tempnode = head
+print(head.val)
+while let temp = tempnode.next {
+    print(temp.val)
+    tempnode = temp
+}
+print("++++++++++++++")
+let s = Solution.init()
+let res = s.middleNode(head)
+print(res?.val ?? -1)
+

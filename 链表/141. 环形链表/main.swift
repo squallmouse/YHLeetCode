@@ -93,4 +93,15 @@ node4.next = node5
 let s = Solution.init()
 print(s.hasCycle(node1))
 
+/*
+ n   m  x步数 相遇在y节点
+ --->O
+ slow = fast
+ 2x = x
+2n + 2y = m + y +n   
+ n + y = m
+ n = (m - y)
+ m-y 环内剩下的节点
+ 
+ */
 
