@@ -12,7 +12,7 @@ import Foundation
 //
 //示例 1:
 //
-//输入: 1->1->2
+//输入: 1->1->1->2
 //输出: 1->2
 //示例 2:
 //
@@ -34,6 +34,18 @@ import Foundation
   }
 class Solution {
     func deleteDuplicates(_ head: ListNode?) -> ListNode? {
-        
+        var currNode = head
+//        var tempVal = head?.val
+        while currNode != nil  && currNode?.next != nil{
+            if  currNode?.val == currNode?.next?.val{
+                currNode?.next = currNode?.next?.next
+            }else{
+                currNode = currNode?.next
+            }
+        }
+        return head
     }
 }
+
+
+
